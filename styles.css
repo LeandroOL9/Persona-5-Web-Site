@@ -1,0 +1,48 @@
+main {
+  flex: 1;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -180%;
+  height: 150%;
+  width: 100%;
+  background-color: #dc2626;
+  opacity: 0;
+  transition: opacity 0.35s ease, top 0.35s ease;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  top: 0;
+  opacity: 1;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+@font-face {
+  font-family: 'personafont';
+  src: url('/fonts/persona_font_title.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'personafont2';
+  src: url('/fonts/persona_font_def.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
